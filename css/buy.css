@@ -1,0 +1,15 @@
+.buy-filters {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+@media (max-width: 1120px) {
+  .buy-filters {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .buy-filters {
+    grid-template-columns: 1fr;
+  }
+}

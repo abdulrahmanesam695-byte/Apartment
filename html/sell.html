@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sell a Property | CasaVista</title>
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="../css/sell.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">CV</span>
+        <span class="brand-copy">
+          <strong>Apartment</strong>
+          <small>Sell Page</small>
+        </span>
+      </a>
+
+      <nav class="topnav">
+        <a data-nav="home" href="index.html">Home</a>
+        <a data-nav="buy" href="buy.html">Buy</a>
+        <a data-nav="sell" href="sell.html">Sell</a>
+        <a data-nav="dashboard" href="dashboard.html">Dashboard</a>
+        <a data-nav="login" data-login-link href="login.html">Login</a>
+      </nav>
+
+      <div class="user-tools">
+        <span class="user-badge"><span data-session-name>Guest</span> | <span data-auth-state>Guest mode</span></span>
+        <button class="ghost-btn" type="button" data-logout hidden>Logout</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-card">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">sell.html</p>
+            <h2>List your item and publish it to the marketplace</h2>
+          </div>
+          <p class="section-text">This page is protected by login and writes new listings into the shared property store.</p>
+        </div>
+
+        <div id="sellBanner" class="message-banner" hidden></div>
+
+        <div class="split-grid sell-layout">
+          <form id="listingForm" class="stack">
+            <div class="sell-form-grid">
+              <label class="field">
+                <span>Property Title</span>
+                <input name="title" type="text" placeholder="Example: Skyline Family Apartment" required>
+              </label>
+
+              <label class="field">
+                <span>City</span>
+                <input name="city" type="text" placeholder="Example: New Cairo" required>
+              </label>
+
+              <label class="field">
+                <span>District</span>
+                <input name="district" type="text" placeholder="Example: Fifth Settlement" required>
+              </label>
+
+              <label class="field">
+                <span>Address</span>
+                <input name="address" type="text" placeholder="Street or compound name" required>
+              </label>
+
+              <label class="field">
+                <span>Intent</span>
+                <select name="intent">
+                  <option value="sell">Sell</option>
+                  <option value="rent">Rent</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Property Type</span>
+                <select name="type">
+                  <option value="Apartment">Apartment</option>
+                  <option value="Villa">Villa</option>
+                  <option value="Duplex">Duplex</option>
+                  <option value="Townhouse">Townhouse</option>
+                  <option value="Chalet">Chalet</option>
+                  <option value="Loft">Loft</option>
+                  <option value="Penthouse">Penthouse</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Bedrooms</span>
+                <input name="bedrooms" type="number" min="0" max="12" value="3" required>
+              </label>
+
+              <label class="field">
+                <span>Bathrooms</span>
+                <input name="bathrooms" type="number" min="1" max="12" value="2" required>
+              </label>
+
+              <label class="field">
+                <span>Area (sq m)</span>
+                <input name="area" type="number" min="30" value="160" required>
+              </label>
+
+              <label class="field">
+                <span>Price</span>
+                <input name="price" type="number" min="1" value="5000000" required>
+              </label>
+
+              <label class="field">
+                <span>Theme</span>
+                <select name="theme">
+                  <option value="theme-sunset">Sunset</option>
+                  <option value="theme-lagoon">Lagoon</option>
+                  <option value="theme-forest">Forest</option>
+                  <option value="theme-sky">Sky</option>
+                  <option value="theme-dusk">Dusk</option>
+                  <option value="theme-sand">Sand</option>
+                </select>
+              </label>
+
+              <label class="field field-checkbox">
+                <span>Featured Listing</span>
+                <input name="featured" type="checkbox">
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Tagline</span>
+              <input name="tagline" type="text" placeholder="Short line that appears on the card">
+            </label>
+
+            <label class="field">
+              <span>Description</span>
+              <textarea name="description" placeholder="Describe the property, neighborhood, and strongest selling points"></textarea>
+            </label>
+
+            <label class="field">
+              <span>Amenities</span>
+              <textarea name="amenities" placeholder="Comma separated, for example: Parking, Security, Garden"></textarea>
+            </label>
+
+            <button class="primary-btn full-width" type="submit">Publish Listing</button>
+          </form>
+
+          <div class="stack">
+            <article class="preview-card">
+              <h4>Live Listing Preview</h4>
+              <div id="listingPreview"></div>
+            </article>
+
+            <article class="preview-card">
+              <h4>My Listed Items</h4>
+              <div id="myListings" class="feed-list"></div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <span>Independent seller page</span>
+      <span>Files: `sell.html`, `css/sell.css`, `js/sell.js`</span>
+    </footer>
+  </div>
+
+  <script src="../js/store.js"></script>
+  <script src="../js/site.js"></script>
+  <script src="../js/sell.js"></script>
+</body>
+</html>

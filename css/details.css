@@ -1,0 +1,15 @@
+#propertyDetails:empty {
+  min-height: 120px;
+}
+
+.details-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 860px) {
+  .details-actions {
+    flex-direction: column;
+  }
+}

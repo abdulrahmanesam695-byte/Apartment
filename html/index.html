@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CasaVista | Property Marketplace</title>
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">CV</span>
+        <span class="brand-copy">
+          <strong>Aparment</strong>
+          <small>Buy, Sell, Dashboard</small>
+        </span>
+      </a>
+
+      <nav class="topnav">
+        <a data-nav="home" href="index.html">Home</a>
+        <a data-nav="buy" href="buy.html">Buy</a>
+        <a data-nav="sell" href="sell.html">Sell</a>
+        <a data-nav="dashboard" href="dashboard.html">Dashboard</a>
+        <a data-nav="login" data-login-link href="login.html">Login</a>
+      </nav>
+
+      <div class="user-tools">
+        <span class="user-badge"><span data-session-name>Guest</span> | <span data-auth-state>Guest mode</span></span>
+        <button class="ghost-btn" type="button" data-logout hidden>Logout</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-card landing-hero split-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Multi-Page Frontend</p>
+          <h1>Every section now lives on its own page with independent HTML, CSS, and JS.</h1>
+          <p class="hero-text">
+            Explore listings on the buy page, publish a property from the sell page, manage everything from the dashboard,
+            and use the login/register page to keep your marketplace actions connected through local storage.
+          </p>
+
+          <div class="hero-actions">
+            <a class="primary-btn" href="buy.html">Start Buying</a>
+            <a class="secondary-btn" href="sell.html">List Your Property</a>
+            <a class="ghost-btn" href="login.html">Login / Register</a>
+          </div>
+
+          <div class="hero-features">
+            <span class="feature-chip">Independent pages</span>
+            <span class="feature-chip">Shared marketplace state</span>
+            <span class="feature-chip">Buyer and seller flows</span>
+            <span class="feature-chip">Dashboard analytics</span>
+          </div>
+        </div>
+
+        <div class="stack">
+          <article class="preview-card home-spotlight">
+            <h4>Live Platform Snapshot</h4>
+            <p class="helper-copy">
+              Listings, favorites, inquiries, sold homes, and newly added properties stay in sync across all pages.
+            </p>
+            <div id="homeMetrics" class="metrics-grid"></div>
+          </article>
+
+          <article class="preview-card">
+            <h4>Signed-In Session</h4>
+            <p class="helper-copy">Current visitor:</p>
+            <div class="summary-item">
+              <span>Name</span>
+              <strong data-session-name>Guest</strong>
+            </div>
+            <div class="summary-item">
+              <span>Status</span>
+              <strong data-auth-state>Guest mode</strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Connected Pages</p>
+            <h2>Move between the full marketplace flow</h2>
+          </div>
+          <p class="section-text">Each page has its own file trio and still talks to the same local data store.</p>
+        </div>
+
+        <div class="quick-link-grid cards-grid">
+          <a class="nav-card" href="login.html">
+            <strong>login.html</strong>
+            <span>Authenticate or register the user and save the session locally.</span>
+          </a>
+          <a class="nav-card" href="buy.html">
+            <strong>buy.html</strong>
+            <span>Filter listings, save favorites, and open property details.</span>
+          </a>
+          <a class="nav-card" href="sell.html">
+            <strong>sell.html</strong>
+            <span>Create a new property listing and push it into the marketplace.</span>
+          </a>
+          <a class="nav-card" href="dashboard.html">
+            <strong>dashboard.html</strong>
+            <span>Track metrics, leads, activity, and property status updates.</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Featured Homes</p>
+            <h2>Top listings from the marketplace</h2>
+          </div>
+          <p class="section-text">This section links directly to the independent `details.html` page for each property.</p>
+        </div>
+
+        <div id="featuredGrid" class="property-grid"></div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <span>CasaVista multi-page frontend</span>
+      <span>Pages: `index`, `login`, `buy`, `sell`, `details`, `dashboard`</span>
+    </footer>
+  </div>
+
+  <script src="../js/store.js"></script>
+  <script src="../js/site.js"></script>
+  <script src="../js/index.js"></script>
+</body>
+</html>

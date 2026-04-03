@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy Properties | CasaVista</title>
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="../css/buy.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">CV</span>
+        <span class="brand-copy">
+          <strong>Aparment</strong>
+          <small>Buy Page</small>
+        </span>
+      </a>
+
+      <nav class="topnav">
+        <a data-nav="home" href="index.html">Home</a>
+        <a data-nav="buy" href="buy.html">Buy</a>
+        <a data-nav="sell" href="sell.html">Sell</a>
+        <a data-nav="dashboard" href="dashboard.html">Dashboard</a>
+        <a data-nav="login" data-login-link href="login.html">Login</a>
+      </nav>
+
+      <div class="user-tools">
+        <span class="user-badge"><span data-session-name>Guest</span> | <span data-auth-state>Guest mode</span></span>
+        <button class="ghost-btn" type="button" data-logout hidden>Logout</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-card page-hero">
+        <p class="eyebrow">buy.html</p>
+        <h1 class="page-title">Browse the marketplace and open any property in its own details page.</h1>
+        <p class="hero-text">
+          Search by city, status, or budget, save your favorite homes, and move straight into the dedicated `details.html` experience for buying or renting.
+        </p>
+        <div id="marketplaceMetrics" class="metrics-grid"></div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Marketplace Filters</p>
+            <h2>Find the right property faster</h2>
+          </div>
+          <p class="section-text">The filters and listing logic now live fully inside `js/buy.js`.</p>
+        </div>
+
+        <div class="filters-grid buy-filters">
+          <label class="field">
+            <span>Search</span>
+            <input id="searchInput" type="text" placeholder="Search by name, city, address, or type">
+          </label>
+
+          <label class="field">
+            <span>Status</span>
+            <select id="statusFilter">
+              <option value="all">All statuses</option>
+              <option value="for-sale">For Sale</option>
+              <option value="for-rent">For Rent</option>
+              <option value="sold">Sold</option>
+              <option value="rented">Rented</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>City</span>
+            <select id="cityFilter">
+              <option value="all">All cities</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Bedrooms</span>
+            <select id="bedroomFilter">
+              <option value="all">Any size</option>
+              <option value="1">1 bedroom</option>
+              <option value="2">2 bedrooms</option>
+              <option value="3">3 bedrooms</option>
+              <option value="4">4 bedrooms</option>
+              <option value="5+">5+ bedrooms</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Price</span>
+            <select id="priceFilter">
+              <option value="all">Any budget</option>
+              <option value="under-5000000">Below EGP 5M</option>
+              <option value="5000000-9000000">EGP 5M to EGP 9M</option>
+              <option value="over-9000000">Above EGP 9M</option>
+              <option value="under-40000">Rent below EGP 40K</option>
+              <option value="over-40000">Rent above EGP 40K</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Sort</span>
+            <select id="sortFilter">
+              <option value="featured">Featured first</option>
+              <option value="price-high">Highest price</option>
+              <option value="price-low">Lowest price</option>
+              <option value="size-high">Largest area</option>
+              <option value="newest">Newest listed</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="results-bar">
+          <div class="results-copy">
+            <strong id="resultCount">0</strong>
+            <span>properties found</span>
+          </div>
+          <div class="results-copy">
+            <strong id="favoriteCount">0</strong>
+            <span>saved favorites</span>
+          </div>
+        </div>
+
+        <div id="propertyGrid" class="property-grid"></div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <span>Independent marketplace page</span>
+      <span>Files: `buy.html`, `css/buy.css`, `js/buy.js`</span>
+    </footer>
+  </div>
+
+  <script src="../js/store.js"></script>
+  <script src="../js/site.js"></script>
+  <script src="../js/buy.js"></script>
+</body>
+</html>

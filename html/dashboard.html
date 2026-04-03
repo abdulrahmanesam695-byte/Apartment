@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | CasaVista</title>
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">CV</span>
+        <span class="brand-copy">
+          <strong>Aparment</strong>
+          <small>Dashboard Page</small>
+        </span>
+      </a>
+
+      <nav class="topnav">
+        <a data-nav="home" href="index.html">Home</a>
+        <a data-nav="buy" href="buy.html">Buy</a>
+        <a data-nav="sell" href="sell.html">Sell</a>
+        <a data-nav="dashboard" href="dashboard.html">Dashboard</a>
+        <a data-nav="login" data-login-link href="login.html">Login</a>
+      </nav>
+
+      <div class="user-tools">
+        <span class="user-badge"><span data-session-name>Guest</span> | <span data-auth-state>Guest mode</span></span>
+        <button class="ghost-btn" type="button" data-logout hidden>Logout</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-card">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">dashboard.html</p>
+            <h2>Track marketplace performance, leads, and listing status</h2>
+          </div>
+          <p class="section-text">The dashboard is now a standalone page connected to the same data store as the buyer and seller flows.</p>
+        </div>
+
+        <div id="dashboardBanner" class="message-banner" hidden></div>
+        <div id="metricsGrid" class="metrics-grid dashboard-metrics"></div>
+
+        <div class="analytics-grid">
+          <article class="dashboard-card">
+            <div class="card-heading">
+              <h3>Status Distribution</h3>
+              <span>How properties are currently classified</span>
+            </div>
+            <div id="statusChart" class="bar-stack"></div>
+          </article>
+
+          <article class="dashboard-card">
+            <div class="card-heading">
+              <h3>City Performance</h3>
+              <span>Where the strongest inventory lives</span>
+            </div>
+            <div id="cityChart" class="bar-stack"></div>
+          </article>
+
+          <article class="dashboard-card">
+            <div class="card-heading">
+              <h3>Property Type Mix</h3>
+              <span>Balance of homes on the platform</span>
+            </div>
+            <div id="typeChart" class="bar-stack"></div>
+          </article>
+
+          <article class="dashboard-card">
+            <div class="card-heading">
+              <h3>Revenue Breakdown</h3>
+              <span>Closed deals separated by sales and rentals</span>
+            </div>
+            <div id="revenueChart" class="summary-list"></div>
+          </article>
+        </div>
+
+        <div class="dashboard-lower">
+          <article class="dashboard-card">
+            <div class="card-heading">
+              <h3>Recent Activity</h3>
+              <span>Latest changes happening across all pages</span>
+            </div>
+            <div id="activityList" class="feed-list"></div>
+          </article>
+
+          <article class="dashboard-card">
+            <div class="card-heading">
+              <h3>Lead Inbox</h3>
+              <span>Viewing requests created from the details page</span>
+            </div>
+            <div id="inquiryList" class="feed-list"></div>
+          </article>
+
+          <article class="dashboard-card">
+            <div class="card-heading">
+              <h3>Admin Actions</h3>
+              <span>Update a listing status and watch analytics refresh</span>
+            </div>
+
+            <form id="statusForm" class="stack">
+              <label class="field">
+                <span>Property</span>
+                <select id="propertySelect"></select>
+              </label>
+
+              <label class="field">
+                <span>New status</span>
+                <select id="adminStatus">
+                  <option value="for-sale">For Sale</option>
+                  <option value="for-rent">For Rent</option>
+                  <option value="sold">Sold</option>
+                  <option value="rented">Rented</option>
+                </select>
+              </label>
+
+              <button class="primary-btn full-width" type="submit">Save Status</button>
+            </form>
+
+            <p id="statusHint" class="status-hint">Choose a property and update its status.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">My Listings</p>
+            <h2>Properties created from the seller page</h2>
+          </div>
+          <p class="section-text">This section helps the logged-in user verify that their listings were published correctly.</p>
+        </div>
+
+        <div id="userListings" class="property-grid"></div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <span>Independent dashboard page</span>
+      <span>Files: `dashboard.html`, `css/dashboard.css`, `js/dashboard.js`</span>
+    </footer>
+  </div>
+
+  <script src="../js/store.js"></script>
+  <script src="../js/site.js"></script>
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>

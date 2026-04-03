@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Register | CasaVista</title>
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">CV</span>
+        <span class="brand-copy">
+          <strong>Aparment</strong>
+          <small>Account Access</small>
+        </span>
+      </a>
+
+      <nav class="topnav">
+        <a data-nav="home" href="index.html">Home</a>
+        <a data-nav="buy" href="buy.html">Buy</a>
+        <a data-nav="sell" href="sell.html">Sell</a>
+        <a data-nav="dashboard" href="dashboard.html">Dashboard</a>
+        <a data-nav="login" data-login-link href="login.html">Login</a>
+      </nav>
+
+      <div class="user-tools">
+        <span class="user-badge"><span data-session-name>Guest</span> | <span data-auth-state>Guest mode</span></span>
+        <button class="ghost-btn" type="button" data-logout hidden>Logout</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-card auth-layout split-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">login.html</p>
+          <h1>Login or register to buy, sell, and manage your listings.</h1>
+          <p class="hero-text">
+            This frontend stores the session locally so your login, favorites, listings, and dashboard actions stay connected across the new pages.
+          </p>
+
+          <div class="stack auth-side-info">
+            <div class="summary-item">
+              <span>Current user</span>
+              <strong data-session-name>Guest</strong>
+            </div>
+            <div class="summary-item">
+              <span>Email</span>
+              <strong data-session-email>Not signed in</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-card">
+          <div id="loginBanner" class="message-banner" hidden></div>
+
+          <form id="loginForm" class="stack">
+            <label class="field">
+              <span>Full Name</span>
+              <input name="name" type="text" placeholder="Enter your name" required>
+            </label>
+
+            <label class="field">
+              <span>Email</span>
+              <input name="email" type="email" placeholder="Enter your email" required>
+            </label>
+
+            <label class="field">
+              <span>Password</span>
+              <input name="password" type="password" placeholder="Enter your password" required>
+            </label>
+
+            <button class="primary-btn full-width" type="submit">Login</button>
+            <button id="registerButton" class="secondary-btn full-width" type="button">Create Account</button>
+            <button id="demoLoginButton" class="ghost-btn full-width" type="button">Use Demo Account</button>
+          </form>
+
+          <p class="helper-copy">
+            Demo login: `demo@casavista.com` / `demo123`. Demo seller: `seller@casavista.com` / `seller123`.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <span>Dedicated login/register page</span>
+      <span>Files: `login.html`, `css/login.css`, `js/login.js`</span>
+    </footer>
+  </div>
+
+  <script src="../js/store.js"></script>
+  <script src="../js/site.js"></script>
+  <script src="../js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شرح مشروع CasaVista بالعربي</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 14mm;
+    }
+
+    :root {
+      --bg: #f6f1ea;
+      --paper: #fffdf9;
+      --ink: #18242d;
+      --muted: #5e6c77;
+      --accent: #b45d32;
+      --accent-soft: #f2e1d5;
+      --line: #e4dbd2;
+      --teal: #206f73;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.8;
+    }
+
+    .sheet {
+      width: 100%;
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .hero,
+    .section,
+    .mini-card,
+    .qa-item {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+    }
+
+    .hero {
+      padding: 28px;
+      margin-bottom: 18px;
+      background:
+        linear-gradient(135deg, rgba(180, 93, 50, 0.08), rgba(32, 111, 115, 0.08)),
+        var(--paper);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin: 0 0 12px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0 0 10px;
+      line-height: 1.4;
+    }
+
+    h1 {
+      font-size: 34px;
+    }
+
+    h2 {
+      font-size: 24px;
+      color: var(--teal);
+    }
+
+    h3 {
+      font-size: 18px;
+    }
+
+    p,
+    li {
+      font-size: 15px;
+    }
+
+    .lead {
+      font-size: 17px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .section {
+      padding: 22px;
+      margin-bottom: 16px;
+      page-break-inside: avoid;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .triple {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .mini-card {
+      padding: 16px;
+      page-break-inside: avoid;
+    }
+
+    ul,
+    ol {
+      margin: 8px 0 0;
+      padding-right: 20px;
+    }
+
+    .workflow {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .step {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: #fbf8f4;
+      border: 1px solid var(--line);
+    }
+
+    .qa-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .qa-item {
+      padding: 16px;
+    }
+
+    .speak-box {
+      padding: 18px;
+      border-radius: 16px;
+      background: #f8f7f3;
+      border-right: 5px solid var(--accent);
+      margin-top: 14px;
+      font-size: 16px;
+    }
+
+    .footer-note {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 4px 0 0 8px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    @media print {
+      .sheet {
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <section class="hero">
+      <div class="eyebrow">Project Explanation for Doctor</div>
+      <h1>شرح مشروع CasaVista بالعربي</h1>
+      <p class="lead">
+        هذا المستند مكتوب بطريقة بسيطة جداً ليساعدني على فهم المشروع وشرحه بسهولة، خصوصاً لأنني ما زلت في بداية تعلم تطوير الويب.
+      </p>
+      <div style="margin-top:14px">
+        <span class="tag">Front-End Only</span>
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Local Storage</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>1. فكرة المشروع</h2>
+      <p>
+        المشروع عبارة عن موقع عقارات خاص ببيع وتأجير المنازل. المستخدم يستطيع مشاهدة العقارات، البحث بينها،
+        فتح التفاصيل، حفظ المفضلة، وإرسال طلب معاينة. كما أن صاحب الموقع يستطيع متابعة كل شيء من خلال
+        لوحة تحكم Dashboard تعرض التحليلات والإيرادات وحالة العقارات.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>2. ما الهدف من المشروع؟</h2>
+      <div class="grid">
+        <article class="mini-card">
+          <h3>هدف للمستخدم</h3>
+          <ul>
+            <li>تصفح العقارات بسهولة</li>
+            <li>البحث والتصفية حسب الحاجة</li>
+            <li>رؤية التفاصيل قبل اتخاذ القرار</li>
+          </ul>
+        </article>
+        <article class="mini-card">
+          <h3>هدف للإدارة</h3>
+          <ul>
+            <li>متابعة عدد العقارات</li>
+            <li>معرفة المبيعات والإيجارات</li>
+            <li>متابعة الرسائل والإيرادات</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>3. لماذا المشروع Front-End فقط؟</h2>
+      <p>
+        لأن المطلوب في هذه المرحلة هو بناء الواجهة الأمامية فقط. لذلك لم أستخدم Back-End أو قاعدة بيانات حقيقية،
+        واعتمدت على <strong>Local Storage</strong> لكي أحفظ البيانات داخل المتصفح نفسه.
+      </p>
+      <div class="triple">
+        <article class="mini-card">
+          <h3>ما الذي يتم حفظه؟</h3>
+          <ul>
+            <li>المفضلة</li>
+            <li>طلبات المعاينة</li>
+            <li>الأنشطة الأخيرة</li>
+          </ul>
+        </article>
+        <article class="mini-card">
+          <h3>الفائدة</h3>
+          <ul>
+            <li>الموقع يصبح تفاعلي</li>
+            <li>يمكن تجربة النظام بدون سيرفر</li>
+            <li>سهل للفهم لمشروع دراسي</li>
+          </ul>
+        </article>
+        <article class="mini-card">
+          <h3>الحدود</h3>
+          <ul>
+            <li>البيانات محلية فقط</li>
+            <li>لا توجد قاعدة بيانات حقيقية</li>
+            <li>لا توجد مشاركة بين الأجهزة</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>4. الأقسام الرئيسية داخل الموقع</h2>
+      <div class="grid">
+        <article class="mini-card">
+          <h3>Overview</h3>
+          <p>يعرض مقدمة سريعة عن الموقع مع إحصائيات مختصرة وأزرار للتنقل.</p>
+        </article>
+        <article class="mini-card">
+          <h3>Listings</h3>
+          <p>يعرض العقارات في شكل بطاقات مع صور وخلفيات ومعلومات سريعة.</p>
+        </article>
+        <article class="mini-card">
+          <h3>Details</h3>
+          <p>يعرض تفاصيل العقار مثل الوصف، المميزات، المساحة، والغرف.</p>
+        </article>
+        <article class="mini-card">
+          <h3>Dashboard</h3>
+          <p>يعرض التحليلات، توزيع الحالات، الإيرادات، والرسائل.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>5. كيف يعمل المشروع؟</h2>
+      <div class="workflow">
+        <div class="step">1. عند فتح الموقع يتم تحميل بيانات العقارات الجاهزة.</div>
+        <div class="step">2. إذا كانت هناك بيانات محفوظة مسبقاً في Local Storage يتم استخدامها.</div>
+        <div class="step">3. المستخدم يستطيع البحث والتصفية بين العقارات.</div>
+        <div class="step">4. عند الضغط على عقار يتم عرض التفاصيل الكاملة له.</div>
+        <div class="step">5. المستخدم يمكنه حفظ العقار في المفضلة أو إرسال طلب معاينة.</div>
+        <div class="step">6. الإدارة يمكنها تغيير حالة العقار من لوحة التحكم.</div>
+        <div class="step">7. بعد أي تغيير يتم تحديث الإحصائيات والإيرادات مباشرة.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>6. حالات العقارات والتحليلات</h2>
+      <div class="grid">
+        <article class="mini-card">
+          <h3>حالات العقارات</h3>
+          <ul>
+            <li><strong>For Sale</strong> = معروض للبيع</li>
+            <li><strong>For Rent</strong> = معروض للإيجار</li>
+            <li><strong>Sold</strong> = تم بيعه</li>
+            <li><strong>Rented</strong> = تم تأجيره</li>
+          </ul>
+        </article>
+        <article class="mini-card">
+          <h3>ما الذي يظهر في الـ Dashboard؟</h3>
+          <ul>
+            <li>عدد العقارات الكلي</li>
+            <li>عدد العقارات للبيع والإيجار</li>
+            <li>عدد العقارات المباعة والمؤجرة</li>
+            <li>إجمالي الإيرادات</li>
+            <li>الرسائل والأنشطة الأخيرة</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>7. كيف تم حساب الإيرادات؟</h2>
+      <div class="grid">
+        <article class="mini-card">
+          <h3>عند البيع</h3>
+          <p>إذا كانت حالة العقار <strong>Sold</strong> يتم احتساب السعر الكامل كإيراد بيع.</p>
+        </article>
+        <article class="mini-card">
+          <h3>عند الإيجار</h3>
+          <p>إذا كانت حالة العقار <strong>Rented</strong> يتم احتساب الإيجار الشهري × 12 كإيراد سنوي.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>8. شرح ملفات المشروع</h2>
+      <div class="triple">
+        <article class="mini-card">
+          <h3>index.html</h3>
+          <p>يحتوي على الهيكل الأساسي للواجهة وأقسام الصفحة.</p>
+        </article>
+        <article class="mini-card">
+          <h3>styles.css</h3>
+          <p>مسؤول عن التصميم والألوان والتخطيط والاستجابة للموبايل.</p>
+        </article>
+        <article class="mini-card">
+          <h3>app.js</h3>
+          <p>مسؤول عن البيانات، التفاعل، الفلاتر، التفاصيل، والـ Dashboard.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>9. نقاط القوة في المشروع</h2>
+      <ul>
+        <li>مشروع واقعي يجمع بين واجهة مستخدم ولوحة تحكم.</li>
+        <li>يوجد صور للعقارات وليس مجرد بيانات نصية.</li>
+        <li>فيه بحث، تصفية، تفاصيل، مفضلة، ورسائل.</li>
+        <li>فيه Dashboard تعرض التحليلات بشكل واضح.</li>
+        <li>مناسب جداً لمستوى طالب مبتدئ لأنه يوضح فهم الأساسيات بشكل عملي.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>10. ما الذي يمكن تطويره لاحقاً؟</h2>
+      <ul>
+        <li>إضافة Back-End وربطه بقاعدة بيانات.</li>
+        <li>إضافة تسجيل دخول للمستخدم والإدارة.</li>
+        <li>إضافة رفع عقارات جديدة من لوحة التحكم.</li>
+        <li>إضافة خريطة للموقع الجغرافي.</li>
+        <li>إضافة أكثر من صورة لكل عقار.</li>
+        <li>إضافة إرسال بريد إلكتروني أو إشعار عند الحجز.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>11. كيف أشرح المشروع للدكتور؟</h2>
+      <div class="speak-box">
+        هذا المشروع عبارة عن موقع عقارات Front-End فقط لبيع وتأجير المنازل.
+        المستخدم يستطيع تصفح العقارات والبحث بينها وفتح تفاصيل كل عقار وحفظ المفضلة وإرسال طلب معاينة.
+        كما أنني أضفت Dashboard للإدارة تعرض عدد العقارات والحالات المختلفة والإيرادات والرسائل.
+        وبما أن المشروع Front-End فقط استخدمت Local Storage بدلاً من قاعدة بيانات حقيقية حتى أجعل المشروع تفاعلياً.
+        الهدف من المشروع هو إظهار فهمي لتنظيم الواجهات، التعامل مع البيانات، وإظهار التحليلات بطريقة عملية.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>12. أسئلة متوقعة من الدكتور</h2>
+      <div class="qa-list">
+        <article class="qa-item">
+          <h3>هل المشروع متصل بقاعدة بيانات؟</h3>
+          <p>لا، المشروع Front-End فقط، وتم استخدام Local Storage لحفظ البيانات محلياً.</p>
+        </article>
+        <article class="qa-item">
+          <h3>كيف تحفظ الرسائل أو المفضلة؟</h3>
+          <p>يتم حفظها داخل المتصفح في Local Storage حتى تبقى موجودة بعد إعادة التحميل.</p>
+        </article>
+        <article class="qa-item">
+          <h3>ما الفرق بين جزء المستخدم وجزء الإدارة؟</h3>
+          <p>المستخدم يتصفح العقارات ويرسل الطلبات، والإدارة تتابع التحليلات وتغيّر حالة العقارات.</p>
+        </article>
+        <article class="qa-item">
+          <h3>لماذا هذا المشروع مناسب كمشروع دراسي؟</h3>
+          <p>لأنه يجمع بين التصميم والتفاعل والبيانات والتحليل في مشروع واحد واضح ومتكامل.</p>
+        </article>
+      </div>
+    </section>
+
+    <p class="footer-note">
+      CasaVista Documentation in Arabic • Prepared for simple student presentation
+    </p>
+  </div>
+</body>
+</html>
