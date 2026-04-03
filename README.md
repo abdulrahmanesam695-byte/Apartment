@@ -1,4 +1,4 @@
-# CasaVista Frontend
+# Team 305106 Frontend
 
 CasaVista is a frontend-only real estate marketplace built as a multi-page project.
 
